@@ -1,0 +1,11 @@
+numpy
+pandas
+matplotlib
+nltk
+spacy
+torch
+transformers
+textblob
+wordcloud
+python-docx
+pywin32
