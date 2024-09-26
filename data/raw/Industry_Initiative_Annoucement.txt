@@ -1,0 +1,5 @@
+Email Subject:
+[Replace this with a subject line for this email.]
+Email Body:
+[Replace this with email body
+Reminder: Please use yellow highlights to indicate custom information that should be updated before sending the email. Please hyperlink to as many external resources as possible.]

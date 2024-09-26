@@ -1,0 +1,7 @@
+Email Subject:
+YEAR Royalty Statement
+Email Body:
+Attached is the journal royalty statement for YEAR. Where a royalty is due, electronic payments will be made by DATE.
+Sage’s finance team does not mail a print copy of the royalty statement since all payments and communications are now electronic. Another copy of the royalty statement will be emailed as remittance advice to your designated finance contact (EMAIL), in line with other journal payment notifications from Sage.
+In prior years we have reported package sales revenue as one line within the royalty statements. Starting in 2023, this revenue has been split out as “Package Sales: Read Only” and “Package Sales: With Open Access” revenue. This change increases the transparency around transforming revenue streams and awareness of the changing landscape of journal subscriptions. If you have any questions about package subscriptions, Sage’s Open Access Agreements, or general royalty statements, please let me know. 
+Please add here the journal’s annual royalty statement which can be found here: https://sagecrm.sharepoint.com/sites/internal/editorial/jed/Royalty%20Test/Forms/AllItems.aspx.

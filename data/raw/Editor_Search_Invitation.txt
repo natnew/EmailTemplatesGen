@@ -1,0 +1,14 @@
+Email Subject:
+Invitation to apply for Editor-in-Chief of <Journal name>
+Email Body:
+Dear Dr. <NAME>,
+I hope this email finds you well. I am reaching out from Sage Publishing regarding an exciting opportunity with <Journal Name> (Impact Factor: <XX>).
+<Dr. [Outgoing Editor] will be stepping down as Editor-in-Chief at the end of this year. We have greatly valued our partnership with Dr. [Outgoing Editor] and appreciate their recommendation that you may be a suitable candidate to succeed them.>
+OR
+<We are inviting applications for the position of Editor-in-Chief and are reaching out to expert members of the community to gauge interest and/or receive suggested candidates for the role.> Further details and the role description can be found [here/attached].
+If you are interested in serving as Editor-in-Chief of <Journal Name>, please send your current CV and a letter of intent. The letter should include your perspective on the journal’s current strengths and weaknesses, your prospective editorial strategy, and any preliminary plans for changes to the editorial board (if applicable).
+
+<Furthermore, if you know of any colleagues or peers who might be well-suited for the role of Editor-in-Chief, we encourage you to share this information or provide them with our contact details. Your recommendations and referrals are highly valued as we aim to gather a diverse and qualified pool of candidates for this esteemed position.>
+Thank you for considering this opportunity.
+Best wishes,
+
