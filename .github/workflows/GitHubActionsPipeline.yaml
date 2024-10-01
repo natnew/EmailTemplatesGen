@@ -1,0 +1,51 @@
+name: NLP Email Template Generation Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install numpy pandas matplotlib nltk spacy torch transformers textblob wordcloud python-docx pywin32
+
+    - name: Run data preprocessing
+      run: |
+        jupyter nbconvert --to notebook --execute notebooks/01_data_preprocessing.ipynb
+
+    - name: Run exploratory data analysis
+      run: |
+        jupyter nbconvert --to notebook --execute notebooks/02_exploratory_data_analysis.ipynb
+
+    - name: Run model training
+      run: |
+        jupyter nbconvert --to notebook --execute notebooks/03_model_training.ipynb
+
+    - name: Run model evaluation
+      run: |
+        jupyter nbconvert --to notebook --execute notebooks/04_model_evaluation.ipynb
+
+    - name: Generate email templates
+      run: |
+        jupyter nbconvert --to notebook --execute notebooks/05_email_template_generation.ipynb
+
+    - name: Integrate with Outlook
+      run: |
+        jupyter nbconvert --to notebook --execute notebooks/06_outlook_integration.ipynb
