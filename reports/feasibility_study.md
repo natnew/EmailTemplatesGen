@@ -76,7 +76,14 @@ Microsoft Outlook integration via Pywin32 for automating email sending.
 - Coordination with the client’s IT team for the final testing and integration phase.
 
 ## Financial Feasibility
+**Budget Overview:**
+At this stage, we are focused on delivering the proof of concept (POC) for the Email Template Generation Project, which can be completed within the current resource allocation and without any additional costs. The POC will cover data preprocessing, model development, and integration with Microsoft Outlook for generating automated email templates.
 
+**Next Steps:**
+Once the POC is delivered and evaluated, we will provide a more detailed breakdown of the full project budget, including any additional resources or costs required for scaling the solution.
+
+**Return on Investment (ROI):**
+The project has the potential to significantly reduce the time spent on routine email tasks, leading to increased productivity across the organisation. We will present a more concrete ROI estimate after the POC phase is completed.
 
 ## Timeline and Milestones
 
@@ -102,7 +109,7 @@ Due to the four-week delay, the timeline has been adjusted as follows:
 - Final Deployment: Full system operational by [TBC].
 
 ## Risk Analysis
-Project Risks:
+**Project Risks:**
 
 - Data availability issues: Delays in obtaining or preparing data could further hinder progress.
 - Client feedback delays: if slower than expected feedback may push the project beyond Q4 deadlines.
@@ -116,7 +123,7 @@ Project Risks:
 ## Conclusion and Recommendations
 
 **Feasibility Conclusion:**
-- - Despite the four-week delay caused by resource allocation challenges, the project is still feasible within the revised timeline. The use of state-of-the-art NLP models, cloud infrastructure, and generative AI tools ensure the technical viability of the project, provided sufficient resources are allocated as necessary.
+- Despite the four-week delay caused by resource allocation challenges, the project is still feasible within the revised timeline. The use of state-of-the-art NLP models, cloud infrastructure, and generative AI tools ensure the technical viability of the project, provided sufficient resources are allocated as necessary.
 
 **Next Steps:**
 
@@ -124,6 +131,4 @@ Project Risks:
 - - Maintain regular communication with the client to keep feedback loops tight and address any emerging challenges quickly.
 - - Ensure sufficient resources are available for data collection and model development to avoid further delays.
 
-- 
 
-Break larger tasks into smaller, manageable steps to maintain steady progress.
