@@ -9,7 +9,16 @@ with col:
     st.markdown("<h1 style='text-align: center;'>📧 Email Template Generator</h1>", unsafe_allow_html=True)
     st.markdown("<h3 style='text-align: center;'>Make your own custom email in a few simple steps!</h3>", unsafe_allow_html=True)
 
-    st.markdown("<p style='text-align: center;'>By following three simple steps, you can turn any message or idea into a professional, clear, and tailored email that suits your needs perfectly.</p>", unsafe_allow_html=True)
+    st.info("""Welcome to the Email Template Generator Project. 👋 This app shows what we're working on or have
+    planned for the future. Plus, there's always more going on behind the scenes — we
+    sometimes like to surprise you ✨""", icon="🗺")
+
+    st.success(
+    """
+    Read [the blog post on Streamlit's roadmap](https://blog.streamlit.io/the-next-frontier-for-streamlit/)
+    to understand our broader vision.
+    """,
+    icon="🗺",)
 
     st.divider()
 
