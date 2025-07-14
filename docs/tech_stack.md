@@ -5,3 +5,4 @@
 - **LangChain** for RAG in the Learn assistant
 - **Python** for logic and orchestration
 - Optional: Whisper for voice input
+- **Office365-REST-Python-Client** for SharePoint integration

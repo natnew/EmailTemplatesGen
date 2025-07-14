@@ -20,6 +20,7 @@ The goal of this project is to reduce the time spent composing repetitive emails
 - **Reinforcement learning** to improve the email generation based on user feedback.
 - Integration with **Microsoft Outlook** via an add-in for seamless usage.
 
+- Centralized template storage using **SharePoint** for easy access.
 ## Setup for Contributing to the Project
 
 If you'd like to contribute to the project, follow the steps below to get started.
