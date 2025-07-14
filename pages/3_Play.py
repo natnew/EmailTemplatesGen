@@ -1,5 +1,12 @@
 import streamlit as st
 from email_generator.generator import stream_generated_email
+from email_generator.outlook_integration import send_email
+from email_generator.sharepoint_integration import (
+    upload_template,
+    download_template,
+)
+from pathlib import Path
+import tempfile
 import sys
 import os
 
@@ -41,4 +48,53 @@ with col:
             st.warning("Please enter some text.")
         else:
             st.info("✍️ Generating your email...")
-            st.write_stream(stream_generated_email(input_text, tone, purpose, openai_api_key=openai_api_key))
+            tokens = []
+            placeholder = st.empty()
+            for token in stream_generated_email(
+                input_text, tone, purpose, openai_api_key=openai_api_key
+            ):
+                tokens.append(token)
+                placeholder.markdown("".join(tokens))
+            st.session_state.generated_email = "".join(tokens)
+
+    generated = st.session_state.get("generated_email")
+    if generated:
+        st.markdown("### Draft")
+        st.text_area("Email body", value=generated, height=200, key="draft_area")
+        recipient = st.text_input("Recipient")
+        subject = st.text_input("Subject")
+        if st.button("Send via Outlook"):
+            if not recipient or not subject:
+                st.warning("Please enter recipient and subject")
+            else:
+                with st.spinner("Sending email..."):
+                    send_email(recipient=recipient, subject=subject, body=generated)
+                st.success("Email sent")
+
+        with st.expander("SharePoint Template Management"):
+            site_url = st.text_input("Site URL")
+            folder_url = st.text_input("Folder URL")
+            username = st.text_input("Username")
+            password = st.text_input("Password", type="password")
+            if st.button("Save Template"):
+                if not all([site_url, folder_url, username, password]):
+                    st.warning("Please fill in SharePoint details")
+                else:
+                    with tempfile.NamedTemporaryFile(delete=False, suffix=".html") as tmp:
+                        tmp.write(generated.encode())
+                        tmp_path = Path(tmp.name)
+                    with st.spinner("Uploading..."):
+                        url = upload_template(site_url, folder_url, tmp_path, username, password)
+                    st.success(f"Saved to {url}")
+
+            file_url = st.text_input("File URL")
+            if st.button("Load Template"):
+                if not all([site_url, file_url, username, password]):
+                    st.warning("Please fill in SharePoint details")
+                else:
+                    with tempfile.NamedTemporaryFile(delete=False, suffix=".html") as tmp:
+                        dest = Path(tmp.name)
+                    with st.spinner("Downloading..."):
+                        download_template(site_url, file_url, dest, username, password)
+                        st.session_state.generated_email = dest.read_text()
+                    st.experimental_rerun()
