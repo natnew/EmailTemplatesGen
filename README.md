@@ -11,6 +11,7 @@ This project focuses on automating the generation of email templates using **Nat
 6. [Contributing](#contributing)
 7. [Collaborators](#collaborators)
 8. [License](#license)
+9. [Outlook Integration](#outlook-integration)
 
 ## Project Overview
 
