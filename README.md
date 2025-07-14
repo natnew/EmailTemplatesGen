@@ -11,6 +11,7 @@ This project focuses on automating the generation of email templates using **Nat
 6. [Contributing](#contributing)
 7. [Collaborators](#collaborators)
 8. [License](#license)
+9. [Outlook Integration](#outlook-integration)
 
 ## Project Overview
 
@@ -20,6 +21,7 @@ The goal of this project is to reduce the time spent composing repetitive emails
 - **Reinforcement learning** to improve the email generation based on user feedback.
 - Integration with **Microsoft Outlook** via an add-in for seamless usage.
 
+- Centralized template storage using **SharePoint** for easy access.
 ## Setup for Contributing to the Project
 
 If you'd like to contribute to the project, follow the steps below to get started.
@@ -40,6 +42,14 @@ git clone https://github.com/yourusername/EmailTempGenerationProject.git
 cd EmailTempGenerationProject
 ```
 
+
+### Outlook Integration
+
+See [docs/outlook_integration.md](docs/outlook_integration.md) for instructions
+on configuring Microsoft Graph credentials and using ``send_email`` to deliver
+messages programmatically.
+
+=======
 ## Installation
 
 Install the project dependencies using pip:
@@ -72,3 +82,5 @@ Templates can be stored on SharePoint for team sharing. The module
 functions using the **Office365-REST-Python-Client** library. Authenticate with
 an app registration and specify the target site and folder to manage template
 files.
+=======
+
