@@ -6,7 +6,6 @@ tiktoken
 python-dotenv
 pydub
 openai-whisper
-langchain-openai
 
 # --- voice & media ---
 streamlit-webrtc>=0.46           # microphone / WebRTC bridge
@@ -18,4 +17,7 @@ numpy>=1.26
 
 langchain-core>=0.2.0
 langchain-community>=0.2.0        # ← needed for DirectoryLoader
-langchain-openai>=0.1.0            # if you call OpenAI tools through LangChain
+
+langchain-openai>=0.1.0            # if you call OpenAI tools through LC
+Office365-REST-Python-Client
+
