@@ -1,6 +1,16 @@
+import os
+import sys
+
 import streamlit as st
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from sidebar import init_sidebar
+
 st.set_page_config(page_title="Workflow", layout="wide")
+
+init_sidebar(
+    "Explore the step-by-step process used to build and test the email generator."
+)
 
 st.title("📊 Project Workflow")
 
@@ -42,4 +52,3 @@ with tabs[3]:
         "Use the **Play** tab to create templates and send them via Outlook."
         " SharePoint integration lets you store reusable drafts."
     )
-
