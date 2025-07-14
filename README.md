@@ -58,7 +58,17 @@ streamlit run app.py
 
 ## Outlook Integration and API Key
 
-Integration with Microsoft Outlook is planned via the Outlook API. To enable
-communication with OpenAI models, provide your API key either through a
-`secrets.toml` file or by setting the `OPENAI_API_KEY` environment variable.
-The application will prompt for the key if it is not found.
+Integration with Microsoft Outlook is handled through the Microsoft Graph API.
+Use the helper functions in `email_generator/outlook_integration.py` to obtain
+an access token via **msal** and send messages directly from a configured
+account. Provide your OpenAI API key either through a `secrets.toml` file or the
+`OPENAI_API_KEY` environment variable. The app prompts for the key if not
+present.
+
+## SharePoint Connectivity
+
+Templates can be stored on SharePoint for team sharing. The module
+`sharepoint_integration.py` exposes simple `upload_file` and `download_file`
+functions using the **Office365-REST-Python-Client** library. Authenticate with
+an app registration and specify the target site and folder to manage template
+files.
