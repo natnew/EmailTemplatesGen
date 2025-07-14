@@ -6,7 +6,6 @@ tiktoken
 python-dotenv
 pydub
 openai-whisper
-langchain-openai
 
 # --- voice & media ---
 streamlit-webrtc>=0.46           # microphone / WebRTC bridge
