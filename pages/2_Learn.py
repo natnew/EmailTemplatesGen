@@ -27,9 +27,31 @@ with col:
         st.warning("Please enter your OpenAI API key in the sidebar.")
         st.stop()
 
+
     query = st.text_input(
         "Ask something about the project...",
         placeholder="e.g. How does the email generation work?",
+
+    st.markdown("##### Try asking one of these:")
+
+    suggestions = [
+        "How do I set up the project locally?",
+        "What are the latest updates to the project?",
+        "How does the email generation work?",
+        "Where should I start exploring the code?",
+    ]
+
+    cols = st.columns(len(suggestions))
+    for col, prompt in zip(cols, suggestions):
+        if col.button(prompt, use_container_width=True):
+            st.session_state.learn_query = prompt
+            st.experimental_rerun()
+
+    query = st.text_input(
+        "Ask something about the project...",
+        placeholder="e.g. How does the email generation work?",
+        key="learn_query",
+
     )
 
     if query:

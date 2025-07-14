@@ -68,7 +68,8 @@ streamlit run app.py
 
 The app now includes a **Workflow** dashboard summarising the notebooks,
 a **Play** tab for generating and sending emails through Outlook, and a
-template manager backed by SharePoint.
+template manager backed by SharePoint. The Play tab also offers a few
+example templates you can insert and modify before sending.
 
 ## Outlook Integration and API Key
 

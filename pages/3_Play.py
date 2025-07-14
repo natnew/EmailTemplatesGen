@@ -56,6 +56,18 @@ with col:
         "Email type", ["Reply", "Follow-up", "Request", "Information", "Other"]
     )
 
+    EXAMPLE_TEMPLATES = {
+        "Meeting Invitation": "Hi NAME,\n\nI'd like to invite you to a meeting on DATE at TIME to discuss our next steps.",
+        "Project Update": "Hello NAME,\n\nHere is a brief update on the project status...",
+        "Thank You": "Dear NAME,\n\nThank you for your assistance with the recent task."
+    }
+    example_choice = st.selectbox(
+        "Or pick an example template",
+        ["None"] + list(EXAMPLE_TEMPLATES.keys()),
+    )
+    if example_choice != "None":
+        st.session_state.generated_email = EXAMPLE_TEMPLATES[example_choice]
+
     # Generate button with streaming output
     if st.button("Generate Email"):
         if not input_text.strip():
