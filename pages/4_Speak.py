@@ -1,5 +1,11 @@
 import streamlit as st
-from streamlit_webrtc import webrtc_streamer, AudioProcessorBase, WebRtcMode
+from streamlit_webrtc import (
+    webrtc_streamer,
+    AudioProcessorBase,
+    WebRtcMode,
+    ClientSettings,
+    WebRtcStreamerState,
+)
 import av
 import numpy as np
 import io
@@ -79,13 +85,23 @@ class WhisperAudioProcessor(AudioProcessorBase):
         self._buffer = []
         return wav_io
 
+client_settings = ClientSettings(
+    rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
+    media_stream_constraints={"video": False, "audio": True},
+)
+
 ctx = webrtc_streamer(
     key="speech",
     mode=WebRtcMode.SENDRECV,
     audio_processor_factory=WhisperAudioProcessor,
-    media_stream_constraints={"video": False, "audio": True},
+    client_settings=client_settings,
     async_processing=True,
 )
+
+if ctx.state == WebRtcStreamerState.ERROR:
+    st.error(
+        "Microphone access was denied. Please allow microphone permissions in your browser and reload the page."
+    )
 
 # -------------------------------------------------------------
 # 3.  PIPELINE — ASR  ➜  LLM  ➜  TTS
