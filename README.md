@@ -39,3 +39,27 @@ Once you have forked the repository, you need to **clone** it to your local mach
 ```bash
 git clone https://github.com/yourusername/EmailTempGenerationProject.git
 cd EmailTempGenerationProject
+```
+
+## Installation
+
+Install the project dependencies using pip:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+Run the Streamlit application:
+
+```bash
+streamlit run app.py
+```
+
+## Outlook Integration and API Key
+
+Integration with Microsoft Outlook is planned via the Outlook API. To enable
+communication with OpenAI models, provide your API key either through a
+`secrets.toml` file or by setting the `OPENAI_API_KEY` environment variable.
+The application will prompt for the key if it is not found.
