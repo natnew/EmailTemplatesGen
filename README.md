@@ -11,6 +11,7 @@ This project focuses on automating the generation of email templates using **Nat
 6. [Contributing](#contributing)
 7. [Collaborators](#collaborators)
 8. [License](#license)
+9. [Outlook Integration](#outlook-integration)
 
 ## Project Overview
 
@@ -41,6 +42,14 @@ git clone https://github.com/yourusername/EmailTempGenerationProject.git
 cd EmailTempGenerationProject
 ```
 
+
+### Outlook Integration
+
+See [docs/outlook_integration.md](docs/outlook_integration.md) for instructions
+on configuring Microsoft Graph credentials and using ``send_email`` to deliver
+messages programmatically.
+
+=======
 ## Installation
 
 Install the project dependencies using pip:
@@ -57,9 +66,3 @@ Run the Streamlit application:
 streamlit run app.py
 ```
 
-## Outlook Integration and API Key
-
-Integration with Microsoft Outlook is planned via the Outlook API. To enable
-communication with OpenAI models, provide your API key either through a
-`secrets.toml` file or by setting the `OPENAI_API_KEY` environment variable.
-The application will prompt for the key if it is not found.
