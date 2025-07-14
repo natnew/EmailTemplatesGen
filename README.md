@@ -38,3 +38,11 @@ Once you have forked the repository, you need to **clone** it to your local mach
 ```bash
 git clone https://github.com/yourusername/EmailTempGenerationProject.git
 cd EmailTempGenerationProject
+```
+
+### Outlook Integration
+
+See [docs/outlook_integration.md](docs/outlook_integration.md) for instructions
+on configuring Microsoft Graph credentials and using ``send_email`` to deliver
+messages programmatically.
+
