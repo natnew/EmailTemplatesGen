@@ -1,3 +1,10 @@
+
+import io
+import os
+import sys
+from typing import Optional
+
+=======
 import streamlit as st
 from streamlit_webrtc import (
     webrtc_streamer,
@@ -6,16 +13,25 @@ from streamlit_webrtc import (
     ClientSettings,
     WebRtcStreamerState,
 )
+
 import av
 import numpy as np
-import io
-import soundfile as sf
 import openai
-from typing import Optional
+import soundfile as sf
+import streamlit as st
+from streamlit_webrtc import AudioProcessorBase, WebRtcMode, webrtc_streamer
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from sidebar import init_sidebar
+
+init_sidebar(
+    "Talk directly with the AI assistant using your microphone for hands-free guidance."
+)
 
 # -------------------------------------------------------------
 # 0.  CONFIGURATION – API‑KEY HANDLING (robust to missing secrets.toml)
 # -------------------------------------------------------------
+
 
 def get_openai_key() -> Optional[str]:
     """Return an OpenAI key.
@@ -35,9 +51,12 @@ def get_openai_key() -> Optional[str]:
     with st.sidebar:
         st.subheader("🔑 API Key")
         entered_key = st.text_input(
-            "Enter your OpenAI API Key", type="password",
-            help="Key is kept only for this browser session and not stored on the server.")
+            "Enter your OpenAI API Key",
+            type="password",
+            help="Key is kept only for this browser session and not stored on the server.",
+        )
     return entered_key or None
+
 
 openai_key = get_openai_key()
 if not openai_key:
@@ -57,6 +76,7 @@ st.markdown(
     "2. Speak, then click **Stop**.\n"
     "3. The assistant will transcribe, think and answer back in both text **and** voice."
 )
+
 
 # -------------------------------------------------------------
 # 2.  AUDIO CAPTURE COMPONENT
@@ -85,10 +105,13 @@ class WhisperAudioProcessor(AudioProcessorBase):
         self._buffer = []
         return wav_io
 
+
+
 client_settings = ClientSettings(
     rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
     media_stream_constraints={"video": False, "audio": True},
 )
+
 
 ctx = webrtc_streamer(
     key="speech",
@@ -136,7 +159,9 @@ if ctx.state.playing is False and ctx.audio_processor is not None:
             assistant_text = completion_resp.choices[0].message.content.strip()
 
         st.chat_message("assistant").markdown(assistant_text)
-        st.session_state.history.append({"role": "assistant", "content": assistant_text})
+        st.session_state.history.append(
+            {"role": "assistant", "content": assistant_text}
+        )
 
         # --- 3c. Text ➜ Speech (TTS) --------------------------
         with st.spinner("Voicing response…"):
