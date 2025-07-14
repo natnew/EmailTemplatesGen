@@ -66,6 +66,10 @@ Run the Streamlit application:
 streamlit run app.py
 ```
 
+The app now includes a **Workflow** dashboard summarising the notebooks,
+a **Play** tab for generating and sending emails through Outlook, and a
+template manager backed by SharePoint.
+
 ## Outlook Integration and API Key
 
 Integration with Microsoft Outlook is handled through the Microsoft Graph API.
