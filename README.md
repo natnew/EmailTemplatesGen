@@ -41,9 +41,27 @@ git clone https://github.com/yourusername/EmailTempGenerationProject.git
 cd EmailTempGenerationProject
 ```
 
+
 ### Outlook Integration
 
 See [docs/outlook_integration.md](docs/outlook_integration.md) for instructions
 on configuring Microsoft Graph credentials and using ``send_email`` to deliver
 messages programmatically.
+
+=======
+## Installation
+
+Install the project dependencies using pip:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+Run the Streamlit application:
+
+```bash
+streamlit run app.py
+```
 
