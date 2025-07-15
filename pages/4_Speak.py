@@ -4,22 +4,18 @@ import os
 import sys
 from typing import Optional
 
-=======
-import streamlit as st
-from streamlit_webrtc import (
-    webrtc_streamer,
-    AudioProcessorBase,
-    WebRtcMode,
-    ClientSettings,
-    WebRtcStreamerState,
-)
-
 import av
 import numpy as np
 import openai
 import soundfile as sf
 import streamlit as st
-from streamlit_webrtc import AudioProcessorBase, WebRtcMode, webrtc_streamer
+from streamlit_webrtc import (
+    AudioProcessorBase,
+    ClientSettings,
+    WebRtcMode,
+    WebRtcStreamerState,
+    webrtc_streamer,
+)
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from sidebar import init_sidebar
