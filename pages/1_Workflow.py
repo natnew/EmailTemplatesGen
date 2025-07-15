@@ -21,34 +21,44 @@ st.markdown(
 )
 
 steps = [
-    "Data Preparation",
-    "Model Training",
-    "Evaluation",
-    "Email Generation",
+    {
+        "title": "Data Preparation",
+        "image": "images/Sample_Data_EDA_BarChart_Category_001.png",
+        "text": (
+            "The *01_data_preprocessing* notebooks clean raw emails and extract "
+            "fields. You can inspect them in the `notebooks/` folder."
+        ),
+    },
+    {
+        "title": "Model Training",
+        "image": "images/Sample_Data_EDA_WordCloud_001.png",
+        "text": (
+            "The *03_model_training* notebooks fine‑tune language models on the "
+            "prepared dataset to learn common structures and tones."
+        ),
+    },
+    {
+        "title": "Evaluation",
+        "image": "images/Sample_Data_EDA_BarChart_Category_001.png",
+        "text": (
+            "The *04_model_evaluation* notebooks compare different runs and "
+            "measure how well the generated templates match expectations."
+        ),
+    },
+    {
+        "title": "Email Generation",
+        "image": "images/Sample_Data_EDA_WordCloud_001.png",
+        "text": (
+            "Use the **Play** tab to create templates and send them via Outlook. "
+            "SharePoint integration lets you store reusable drafts."
+        ),
+    },
 ]
 
-tabs = st.tabs(steps)
+tabs = st.tabs([step["title"] for step in steps])
 
-with tabs[0]:
-    st.markdown(
-        "The *01_data_preprocessing* notebooks clean raw emails and extract fields."
-        " You can inspect them in the `notebooks/` folder."
-    )
-
-with tabs[1]:
-    st.markdown(
-        "The *03_model_training* notebooks fine‑tune language models on the"
-        " prepared dataset to learn common structures and tones."
-    )
-
-with tabs[2]:
-    st.markdown(
-        "The *04_model_evaluation* notebooks compare different runs and measure"
-        " how well the generated templates match expectations."
-    )
-
-with tabs[3]:
-    st.markdown(
-        "Use the **Play** tab to create templates and send them via Outlook."
-        " SharePoint integration lets you store reusable drafts."
-    )
+for tab, step in zip(tabs, steps):
+    with tab:
+        with st.expander("See details", expanded=True):
+            st.image(step["image"], use_column_width=True)
+            st.write(step["text"])
