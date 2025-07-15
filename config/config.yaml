@@ -1,0 +1,5 @@
+# Sample configuration for EmailTemplatesGen
+outlook:
+  client_id: "your-client-id"
+  tenant_id: "your-tenant-id"
+  client_secret: "your-client-secret"
