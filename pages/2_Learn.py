@@ -28,10 +28,6 @@ with col:
         st.stop()
 
 
-    query = st.text_input(
-        "Ask something about the project...",
-        placeholder="e.g. How does the email generation work?",
-
     st.markdown("##### Try asking one of these:")
 
     suggestions = [
