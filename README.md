@@ -5,13 +5,14 @@ This project focuses on automating the generation of email templates using **Nat
 ## Table of Contents
 1. [Project Overview](#project-overview)
 2. [Folder Structure](#folder-structure)
-3. [Installation](#installation)
-4. [Usage](#usage)
-5. [Development Workflow](#development-workflow)
-6. [Contributing](#contributing)
-7. [Collaborators](#collaborators)
-8. [License](#license)
-9. [Outlook Integration](#outlook-integration)
+3. [Contributing](#contributing)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Outlook Integration and API Key](#outlook-integration-and-api-key)
+7. [SharePoint Connectivity](#sharepoint-connectivity)
+8. [Development Workflow](#development-workflow)
+9. [Collaborators](#collaborators)
+10. [License](#license)
 
 ## Project Overview
 
@@ -22,7 +23,16 @@ The goal of this project is to reduce the time spent composing repetitive emails
 - Integration with **Microsoft Outlook** via an add-in for seamless usage.
 
 - Centralized template storage using **SharePoint** for easy access.
-## Setup for Contributing to the Project
+
+## Folder Structure
+
+- `app.py` – Streamlit user interface.
+- `email_generator/` – Outlook helper utilities.
+- `sharepoint_integration.py` – SharePoint file operations.
+- `docs/` – Additional documentation.
+- `tests/` – Unit tests.
+
+## Contributing
 
 If you'd like to contribute to the project, follow the steps below to get started.
 
@@ -49,7 +59,6 @@ See [docs/outlook_integration.md](docs/outlook_integration.md) for instructions
 on configuring Microsoft Graph credentials and using ``send_email`` to deliver
 messages programmatically.
 
-=======
 ## Installation
 
 Install the project dependencies using pip:
@@ -87,5 +96,18 @@ Templates can be stored on SharePoint for team sharing. The module
 functions using the **Office365-REST-Python-Client** library. Authenticate with
 an app registration and specify the target site and folder to manage template
 files.
-=======
+
+
+## Development Workflow
+
+See [docs/roadmap.md](docs/roadmap.md) for planned features. Development occurs on feature branches with pull requests for review.
+
+## Collaborators
+
+- Natasha
+- Lana Humphrys
+
+## License
+
+This project is released under the [MIT License](LICENSE).
 
