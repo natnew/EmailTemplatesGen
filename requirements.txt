@@ -1,6 +1,6 @@
 streamlit>=1.32.0
 openai>=1.13.3
-msal>=1.25.0
+msal>=1.25.0  # for Outlook authentication
 requests>=2.31
 langchain>=0.1.9
 faiss-cpu
@@ -21,11 +21,8 @@ langchain-core>=0.2.0
 langchain-community>=0.2.0        # ← needed for DirectoryLoader
 
 langchain-openai>=0.1.0            # if you call OpenAI tools through LangChain
-msal>=1.25.0                      # for Outlook authentication
 Office365-REST-Python-Client>=2.5.0  # SharePoint integration
 
 
-langchain-openai>=0.1.0            # if you call OpenAI tools through LC
-Office365-REST-Python-Client
 
 
