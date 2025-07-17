@@ -61,6 +61,14 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 
+# Application-specific logs
+logs/*.log
+logs/*.log.*
+
+# Environment files (keep .env.example)
+.env
+!.env.example
+
 # Flask stuff:
 instance/
 .webassets-cache
